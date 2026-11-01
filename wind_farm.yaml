@@ -1,0 +1,27 @@
+floris_version: v3.0.0
+name: RealTime_Wake_Deflection
+solver: {type: grid}
+farm:
+  layout_x: [150.0, 150.0, 150.0, 450.0, 450.0, 700.0, 700.0, 700.0, 1050.0, 1050.0, 1350.0, 1350.0, 1650.0, 1650.0, 1950.0]
+  layout_y: [450.0, 0.0, -450.0, 250.0, -250.0, 550.0, 0.0, -550.0, 350.0, -350.0, 150.0, -150.0, 600.0, -600.0, 0.0]
+  turbine_type: [nrel_5mw]
+flow_field:
+  wind_speeds: [8.0]
+  wind_directions: [270.0]
+  turbulence_intensity: [0.06]
+  air_density: 1.225
+  reference_wind_height: 90.0
+wake:
+  model_strings: {velocity_model: gauss, deflection_model: gauss, combination_model: sosfs, turbulence_model: crespo_hernandez}
+  enable_secondary_steering: true
+  enable_yaw_added_recovery: true
+  enable_transverse_velocities: true
+turbine:
+  turbine_type: nrel_5mw
+  rotor_diameter: 126.0
+  hub_height: 90.0
+  p_exponent: 1.88
+  power_thrust_table:
+    wind_speed: [3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 19.0, 20.0, 21.0, 22.0, 23.0, 24.0, 25.0]
+    power_coefficient: [0.2, 0.35, 0.44, 0.46, 0.47, 0.46, 0.45, 0.42, 0.37, 0.3, 0.23, 0.18, 0.15, 0.12, 0.1, 0.08, 0.07, 0.06, 0.05, 0.04, 0.04, 0.03, 0.03]
+    thrust_coefficient: [0.83, 0.83, 0.82, 0.8, 0.79, 0.76, 0.73, 0.7, 0.65, 0.59, 0.48, 0.37, 0.3, 0.24, 0.2, 0.17, 0.14, 0.12, 0.1, 0.09, 0.08, 0.07, 0.06]
